@@ -8,9 +8,9 @@ provider:
 
 
 functions:
-  user-list:
-    handler: user-list.handler
+  users-list:
+    handler: lib/users-list.handler
     events:
       - http:
-          path: user-list
+          path: users
           method: get
