@@ -3,15 +3,14 @@ service: todo-adminstration-service # NOTE: update this with your service name
 provider:
   name: aws
   runtime: python3.6
-  region: ${opt:region, 'eu-west-1'} 
+  region: ${opt:region, 'eu-west-1'}
   profile: ${opt:profile}
 
 
 functions:
-  hello:
-    handler: handler.hello
+  user-list:
+    handler: user-list.handler
     events:
       - http:
-          path: hello
+          path: user-list
           method: get
-
