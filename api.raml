@@ -84,6 +84,17 @@ types:
                 "username": "horst",
                 "email": "horst@example.com"
               }
+    patch:
+      responses:
+        200:
+          body:
+            type: user
+            example: |
+              {
+                "id" : "aaaaa-bbbbbb-ccccc",
+                "username": "horst",
+                "email": "horst@example.com"
+              }
 
     /todos:
       get:
