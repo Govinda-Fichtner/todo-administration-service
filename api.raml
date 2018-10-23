@@ -28,6 +28,24 @@ types:
       assignee: user
 
 /users:
+  get:
+    responses:
+      200:
+        body:
+          type: user[]
+          example: |
+            [
+              {
+                "id" : "aaaaa-bbbbbb-ccccc",
+                "username": "horst",
+                "email": "horst@example.com"
+              },
+              {
+                "id" : "bbbbbb-cccccc-ddddd",
+                "username": "walter",
+                "email": "walter@example.com"
+              }
+            ]
   post:
     body:
       type: user
