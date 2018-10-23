@@ -15,6 +15,9 @@ var/
 .installed.cfg
 *.egg
 
+# Mac stuff
+.DS_Store
+
 # Serverless directories
 .serverless
 .idea/AWS_ToDo.iml
