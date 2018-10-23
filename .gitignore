@@ -17,3 +17,7 @@ var/
 
 # Serverless directories
 .serverless
+.idea/AWS_ToDo.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
