@@ -15,13 +15,13 @@ custom:
 
 functions:
   users-list:
-    handler:      lib/users-list.handler
+    handler:      lib/users_list.handler
     events:
       - http:
           path:   users
           method: get
   users-get:
-    handler:      lib/users-get.handler
+    handler:      lib/users_get.handler
     events:
       - http:
           path:   users/{id}
