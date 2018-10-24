@@ -4,8 +4,14 @@ provider:
   name:           aws
   runtime:        python3.6
   region:         ${opt:region, 'eu-west-1'}
-  profile:        ${opt:profile}
+  profile:        ${self:custom.my_profile.${self:custom.my_stage}}
 
+custom:
+  my_stage: ${opt:stage, self:provider.stage}
+  my_profile:
+    dev: ${self:custom.my_profile.development}
+    development: sb1-development-account
+    staging: sb1-staging-account
 
 functions:
   users-list:
