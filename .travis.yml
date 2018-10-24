@@ -5,5 +5,11 @@ python:
 install:
   - pip install -r requirements-dev.txt
 
-script:
-  - pytest
+jobs:
+  include:
+    - stage: "Unit"
+      name: "Unit Tests"
+      script: pytest
+    - stage: deploy
+      name: "Deploy to AWS"
+      script: echo "running serverless requires AWS credentials"
