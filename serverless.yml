@@ -10,8 +10,8 @@ custom:
   my_stage: ${opt:stage, self:provider.stage}
   my_profile:
     dev: ${self:custom.my_profile.development}
-    development: sb1-development-account
-    staging: sb1-staging-account
+    development: sb-development-account
+    staging: sb-staging-account
 
 functions:
   users-list:
