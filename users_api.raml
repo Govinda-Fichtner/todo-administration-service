@@ -1,0 +1,123 @@
+#%RAML 1.0
+title: Todo App - Administration Service
+version: v1
+baseUri: http://example.com/
+mediaType:
+  - application/json
+protocols:
+  - HTTP
+types:
+  user:
+    type: object
+    properties:
+      id?:
+        type: string
+        description: a UUID, will be created by the server
+      username: string
+      email: string
+
+  todo:
+    type: object
+    properties:
+      id?:
+        description: a UUID, will be created by the server
+        type: string
+      headline: string
+      description: string
+      creator: user
+      assignee: user
+
+/users:
+  get:
+    responses:
+      200:
+        body:
+          type: user[]
+          example: |
+            [
+              {
+                "id" : "aaaaa-bbbbbb-ccccc",
+                "username": "horst",
+                "email": "horst@example.com"
+              },
+              {
+                "id" : "bbbbbb-cccccc-ddddd",
+                "username": "walter",
+                "email": "walter@example.com"
+              }
+            ]
+  post:
+    body:
+      type: user
+    responses:
+      200:
+        body:
+          type: user
+          description: user with id
+          example: |
+            {
+              "id" : "aaaaa-bbbbbb-ccccc",
+              "username": "horst",
+              "email": "horst@example.com"
+            }
+  /{id}:
+    get:
+      responses:
+        200:
+          body:
+            type: user
+            example: |
+              {
+                "id" : "aaaaa-bbbbbb-ccccc",
+                "username": "horst",
+                "email": "horst@example.com"
+              }
+
+    delete:
+      responses:
+        200:
+          body:
+            type: user
+            example: |
+              {
+                "id" : "aaaaa-bbbbbb-ccccc",
+                "username": "horst",
+                "email": "horst@example.com"
+              }
+    patch:
+      responses:
+        200:
+          body:
+            type: user
+            example: |
+              {
+                "id" : "aaaaa-bbbbbb-ccccc",
+                "username": "horst",
+                "email": "horst@example.com"
+              }
+
+    /todos:
+      get:
+        responses:
+          200:
+            body:
+              type: todo[]
+              example: |
+                [
+                  {
+                    "id": "aaaaa-bbbbbb-ccccc",
+                    "headline": "do stuff",
+                    "description": "it's important",
+                    "creator": {
+                      "id" : "aaaaa-bbbbbb-ccccc",
+                      "username": "horst",
+                      "email": "horst@example.com"
+                    },
+                    "assignee": {
+                      "id" : "aaaaa-bbbbbb-ccccc",
+                      "username": "horst",
+                      "email": "horst@example.com"
+                    }
+                  }
+                ]
+    
