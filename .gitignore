@@ -14,8 +14,6 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
-__pycache__
-
 # Mac stuff
 .DS_Store
 
@@ -26,5 +24,12 @@ __pycache__
 .idea/modules.xml
 .idea/workspace.xml
 
-# Node stff
+# Node stuff
 node_modules
+
+# pip and python related
+lib/
+__pycache__
+bin/
+pip-selfcheck.json
+include/
